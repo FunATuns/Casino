@@ -229,6 +229,7 @@ button:hover, a:hover {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  height: 20em;
 }
 
 #historyP {
@@ -252,6 +253,7 @@ button:hover, a:hover {
   padding: 60px;
   background-color: #00457D;
   color: white;
+
 }
 
 #extras div div {
@@ -267,3 +269,17 @@ button:hover, a:hover {
   font-size: 64px;
   letter-spacing: 1px;
 }
+
+#spinOptions {
+  height: 15em;
+}
+
+.spinOptionsOut {
+  transition: height 9.5s cubic-bezier(.31,.9985,.31,.9985);
+
+}
+
+.spinOptionsIn{
+  transition: height .5s cubic-bezier(.31,.9985,.31,.9985);
+}
+

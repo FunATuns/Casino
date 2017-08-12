@@ -112,12 +112,19 @@ function createEvent(message, affMoney, posOrNeg) {
 
 function spin () {
   var data = generateItemlist(packageOne);
+  $("#spinOptions").removeClass( "spinOptionsOut" );
+  $("#spinOptions").addClass( "spinOptionsIn" );
+  $("#spinOptions").css("height","10em");
+
   money = money - packageOne.cost;
   document.getElementById("money").innerHTML = money;
   createEvent(name + " spun the wheel", packageOne.cost, "-");
   spinner.innerHTML = data.htmlString;
   setTimeout(function() {
-  $(".spinItem").css("transform", "translateX(-905em)");
+    $(".spinItem").css("transform", "translateX(-905em)");
+    $("#spinOptions").removeClass( "spinOptionsIn" );
+    $("#spinOptions").addClass( "spinOptionsOut" );
+    $("#spinOptions").css("height","15em");
   },500);
   setTimeout(function() {
   doneSpin(data.winnings);
@@ -128,5 +135,6 @@ function doneSpin(amountWon) {
   money = money + amountWon;
   document.getElementById("money").innerHTML = money;
   createEvent(name + " won $" + amountWon + "!", amountWon, "+");
+  $("#spinnerOptions").text("You have won $" + amountWon + "!")
 }
 
