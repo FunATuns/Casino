@@ -1,13 +1,15 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Casino</title>
+  <meta name="description" content="Casino game for project">
+  <meta name="author" content="Payton and Brennan">
+  
 
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <!--[if lt IE 9]>
@@ -15,7 +17,36 @@
   <![endif]-->
 </head>
 
-<body>
+<body id="body">
+  <div id="chooseNameOverlay">
+  	<form>
+      <input type="text" id="username" required />
+      <input type="submit" id="startGameBtn" onclick="start()" required />
+    </form>
+  </div>
+  <main> 
+    <section id="playersInfo">
+    	<div id="profile">
+        
+      </div>
+      <div id="winningHistory">
+    
+      </div>
+    </section>
+    
+    <section id="gameSection">
+      <div id="packages">
+        
+      </div>
+      <div id="spinner">
+        
+      </div>
+      
+      <div id="extras">
+        
+      </div>
+    </section>
+  </main>
   <script src="js/script.js"></script>
 </body>
 </html>
