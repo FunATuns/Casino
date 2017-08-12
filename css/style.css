@@ -201,8 +201,9 @@ button:hover, a:hover {
 }
 
 #extras {
-  height: 28em;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
 }
 
 #historyP {
@@ -220,4 +221,14 @@ button:hover, a:hover {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid white;
+}
+
+#extras div {
+  padding: 20px;
+  background-color: #00457D;
+  color: white;
+}
+
+#extras div div {
+  padding: 0;
 }
