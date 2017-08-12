@@ -203,7 +203,6 @@ button:hover, a:hover {
   width: 10em;
   display: inline-block;
   background-color: transparent;
-  border-left: 1px solid rgba(0, 0, 0, .5);
 }
 
 .spinInfo {
@@ -218,11 +217,9 @@ button:hover, a:hover {
 #spinner {
   z-index: -100;
   height: 10em;
-  width: 100%;
   padding-left: 50%;
   white-space: nowrap;
   overflow: hidden;
-  background-color: #63C900;
   -webkit-box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
   box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
@@ -252,7 +249,7 @@ button:hover, a:hover {
 }
 
 #extras div {
-  padding: 30px;
+  padding: 60px;
   background-color: #00457D;
   color: white;
 }

@@ -2,7 +2,7 @@ var gameElement = document.getElementById("body"),
     nameOverlay = document.getElementById("chooseNameOverlay"),
     moneyP = document.getElementById("money"),
     spinner = document.getElementById("spinner"),
-    money = 100,
+    money = 500,
     name,
     whichBackground = true;
 
@@ -112,29 +112,21 @@ function createEvent(message, affMoney, posOrNeg) {
 
 function spin () {
   var data = generateItemlist(packageOne);
+  money = money - packageOne.cost;
+  document.getElementById("money").innerHTML = money;
   createEvent(name + " spun the wheel", packageOne.cost, "-");
   spinner.innerHTML = data.htmlString;
   setTimeout(function() {
-    $(".spinItem").css("transform", "translateX(-880em)");
+  $(".spinItem").css("transform", "translateX(-905em)");
   },500);
   setTimeout(function() {
-    doneSpin(data.winnings);
+  doneSpin(data.winnings);
   },10000);
 }
 
 function doneSpin(amountWon) {
-
-}
-
-function testevent() {
-  spinner.innerHTML = generateItemlist(packageOne).htmlString;
-  setTimeout(function() {
-    $(".spinItem").css("transform", "translateX(-905em)");
-  },500);
-  
-}
-
-function doneSpin(){
-  
+  money = money + amountWon;
+  document.getElementById("money").innerHTML = money;
+  createEvent(name + " won $" + amountWon + "!", amountWon, "+");
 }
 
