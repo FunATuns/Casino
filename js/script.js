@@ -72,7 +72,7 @@ function generateItemlist (package) {
 spinner.innerHTML = generateItemlist(packageOne).htmlString;
 
 function getItemHTML(item, winning) {
-  return "<div class='spinItem'>" + item.value + "</div>"
+  return "<div class='spinItem'><div class='spinInfo'>" + item.value + "</div></div>"
 }
 
 function getRandomInt(a,b) {
@@ -94,5 +94,9 @@ function createEvent(message, affMoney, posOrNeg) {
 
 function testevent() {
   createEvent("Test event", 0, "+");
+}
+
+function doneSpin(){
+  
 }
 
