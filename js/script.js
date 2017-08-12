@@ -41,7 +41,7 @@ function generateItem (package) {
         }
     }
   }
-  var item = possibleArray[getRandomInt(0,possibleArray.length)];
+  var item = possibleArray[getRandomInt(0,possibleArray.length-1)];
   return {value:item};
 }
 
@@ -69,10 +69,30 @@ function generateItemlist (package) {
   return null;
 }
 
-spinner.innerHTML = generateItemlist(packageOne).htmlString;
+
 
 function getItemHTML(item, winning) {
-  return "<div class='spinItem'>" + item.value + "</div>"
+  if(winning)
+    return "<div class='spinItem roll'style='background-color:#ff0000'>" + item.value + "</div>"
+  return "<div class='spinItem roll'style='background-color:#" + getColorFromValue(item.value) +"'>" + item.value + "</div>"
+}
+
+function getColorFromValue(value) 
+{
+  switch(value) {
+    case 100:
+      return "caffbf";
+      break;
+    case 200:
+      return "88ff70";
+      break;
+    case 500:
+      return "42ff1c";
+      break;
+    case 1000:
+      return "1cffa0";
+      break;
+  }
 }
 
 function getRandomInt(a,b) {
@@ -92,7 +112,26 @@ function createEvent(message, affMoney, posOrNeg) {
   }
 }
 
+function spin () {
+  var data = generateItemlist(packageOne);
+  spinner.innerHTML = data.htmlString;
+  setTimeout(function() {
+    $(".spinItem").css("transform", "translateX(-880em)");
+  },500);
+  setTimeout(function() {
+    doneSpin(data.winnings);
+  },10000);
+}
+
+function doneSpin(amountWon) {
+  
+}
+
 function testevent() {
-  createEvent("Test event", 0, "+");
+  spinner.innerHTML = generateItemlist(packageOne).htmlString;
+  setTimeout(function() {
+    $(".spinItem").css("transform", "translateX(-880em)");
+  },500);
+  
 }
 
