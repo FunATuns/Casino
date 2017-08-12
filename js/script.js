@@ -4,14 +4,15 @@ var gameElement = document.getElementById("body"),
     spinner = document.getElementById("spinner"),
     money = 500,
     name,
-    whichBackground = true;
+    whichBackground = true
+    spinAgain = true;
 
 var packageOne = {
   "100": 50,
   "200":30,
   "500":15,
   "1000": 5,
-  "cost": 200
+  "cost": 150
 };
 
 function start() {
@@ -111,22 +112,26 @@ function createEvent(message, affMoney, posOrNeg) {
 }
 
 function spin () {
-  var data = generateItemlist(packageOne);
-  money = money - packageOne.cost;
-  document.getElementById("money").innerHTML = money;
-  createEvent(name + " spun the wheel", packageOne.cost, "-");
-  spinner.innerHTML = data.htmlString;
-  setTimeout(function() {
-  $(".spinItem").css("transform", "translateX(-905em)");
-  },500);
-  setTimeout(function() {
-  doneSpin(data.winnings);
-  },10000);
+  if (spinAgain){
+    spinAgain = false;
+    var data = generateItemlist(packageOne);
+    money = money - packageOne.cost;
+    document.getElementById("money").innerHTML = money;
+    createEvent(name + " spun the wheel", packageOne.cost, "-");
+    spinner.innerHTML = data.htmlString;
+    setTimeout(function() {
+    $(".spinItem").css("transform", "translateX(-905em)");
+    },500);
+    setTimeout(function() {
+    doneSpin(data.winnings);
+    },10000);
+  }
 }
 
 function doneSpin(amountWon) {
   money = money + amountWon;
   document.getElementById("money").innerHTML = money;
   createEvent(name + " won $" + amountWon + "!", amountWon, "+");
+  spinAgain = true;
 }
 

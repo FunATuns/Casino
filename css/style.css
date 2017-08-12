@@ -200,18 +200,12 @@ button:hover, a:hover {
   position: relative;
   z-index: -10;
   height: 10em;
-  width: 10em;
+  width: 9.9em;
   display: inline-block;
   background-color: transparent;
-}
-
-.spinInfo {
-  position: relative;
-  z-index: -9;
-  width: 10em;
-  display: inline-block;
-  vertical-align: -80px;
+  line-height: 9em;
   text-align: center;
+  border-left: .1em solid rgba(0, 0, 0, .5)
 }
 
 #spinner {
