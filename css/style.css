@@ -191,10 +191,22 @@ button:hover, a:hover {
   width: 100%;
 }
 
+.spinItem {
+  position: relative;
+  z-index: -1;
+  height: 10em;
+  width: 10em;
+  display: inline-block;
+  background-color: red;
+  text-align: center;
+}
+
 #spinner {
+  z-index: 0;
   height: 10em;
   width: 100%;
-  background-color: #63C900;
+  white-space: nowrap;
+  overflow: hidden;
   -webkit-box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
   box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
@@ -212,10 +224,10 @@ button:hover, a:hover {
   z-index: 10;
 }
 
-#miniarrow {
-  position: relative;
+#miniArrow {
+  position: absolute;
   float: left;
-  margin: 0 calc(50% - 20px);
+  margin: 0 calc(38% - 20px);
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
