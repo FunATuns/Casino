@@ -200,12 +200,12 @@ button:hover, a:hover {
   position: relative;
   z-index: -10;
   height: 10em;
-  width: 9.9em;
+  width: 9.95em;
   display: inline-block;
   background-color: transparent;
   line-height: 9em;
   text-align: center;
-  border-left: .1em solid rgba(0, 0, 0, .5)
+  border-left: .05em solid rgba(0, 0, 0, .5)
 }
 
 #spinner {
