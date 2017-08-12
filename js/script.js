@@ -34,7 +34,7 @@ function start() {
 function generateItem (package) {
   var possibleArray = [];
   for(var property in package) {
-    if (package.hasOwnProperty(property) && property !== "cost") {
+    if (package.hasOwnProperty(property) && property != "cost") {
         var amount = Number(property);
         for(var o = 0; o < package[property];o++) {
           possibleArray.push(amount);
@@ -68,8 +68,6 @@ function generateItemlist (package) {
   }
   return null;
 }
-
-
 
 function getItemHTML(item, winning) {
   if(winning)
@@ -125,13 +123,13 @@ function spin () {
 }
 
 function doneSpin(amountWon) {
-  
+
 }
 
 function testevent() {
   spinner.innerHTML = generateItemlist(packageOne).htmlString;
   setTimeout(function() {
-    $(".spinItem").css("transform", "translateX(-880em)");
+    $(".spinItem").css("transform", "translateX(-905em)");
   },500);
   
 }
