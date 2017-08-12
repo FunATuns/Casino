@@ -27,12 +27,14 @@ function getRandomInt(a,b) {
 }
 
 function createEvent(message, affMoney, posOrNeg) {
+  document.getElementById("history").classList.add('down');
+  document.getElementById("history").style.marginTop = "0";
   if (whichBackground) {
-    $('#history').prepend($('<tr style="background-color: rgba(255, 255, 255, .5)"><td>' + message + '</td><td>' + posOrNeg + '$' + affMoney + '</td></tr>'));
+    $('<tr style="background-color: rgba(255, 255, 255, .5)"><td>' + message + '</td><td>' + posOrNeg + '$' + affMoney + '</td></tr>').hide().fadeIn().prependTo('#history');
     whichBackground = false;
   }
   else {
-    $('#history').prepend($('<tr><td>' + message + '</td><td>' + posOrNeg + '$' + affMoney + '</td></tr>'));
+    $('<tr><td>' + message + '</td><td>' + posOrNeg + '$' + affMoney + '</td></tr>').hide().fadeIn().prependTo('#history');
     whichBackground = true;
   }
 }

@@ -142,6 +142,9 @@ button:hover, a:hover {
   width: 100%;
   text-align: center;
   padding: 5px 0;
+  background-color: #00457D;
+  z-index: 10;
+  position: relative;
 }
 
 #welcoming, #currentbalance {
@@ -152,8 +155,16 @@ button:hover, a:hover {
   display: none;
 }
 
+.down, .down * {
+  transition: all .75s ease;
+}
+
+#prHR {
+  margin: 0;
+}
+
 #money {
-  margin-bottom: 2em;
+  padding-bottom: 1.05em !important;
 }
 
 #history tr td {
@@ -166,7 +177,8 @@ button:hover, a:hover {
 
 #history {
   width: 100%;
-  margin-top: .45em;
+  z-index: 1;
+  margin-top: -76px;
 }
 
 #gameSection {
@@ -180,7 +192,7 @@ button:hover, a:hover {
 }
 
 #spinner {
-  height: 19vh;
+  height: 20vh;
   width: 100%;
   background-color: #63C900;
   -webkit-box-shadow: inset 0px 0px 20px 6px rgba(0,0,0,0.75);
@@ -194,7 +206,9 @@ button:hover, a:hover {
 }
 
 #historyP {
-  margin-top: .45em;
+  padding: calc(.45em + 10px) 0 !important;
+  background-color: #00457D;
+  z-index: 10;
 }
 
 #miniarrow {
