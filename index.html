@@ -19,25 +19,32 @@
 
 <body id="body">
   <div id="chooseNameOverlay">
-  	<form>
-      <input type="text" id="username"/>
+  	<div id="form">
+      <input type="text" id="username" autocomplete="off" placeholder="Enter a username" maxlength="16"/>
+      <p id="nousername">Please enter a username!</p>
       <button id="startGameBtn" onClick="start();">Begin!</button>
-    </form>
+    </div>
   </div>
   <main> 
     <section id="playersInfo">
     	<div id="profile">
-        
+        <p id="welcoming">Welcome,</p><p id="usernamePlace"></p>
+        <p id="currentbalance">Current Balance:</p><p id="money"></p>
       </div>
+      <hr id="prHR">
       <div id="winningHistory">
-    
+        <p id="historyP">History</p>
+        <table id="history">
+
+        </table>
       </div>
     </section>
     
     <section id="gameSection">
       <div id="packages">
-        
+        <button onclick="testevent()">lmao</button>
       </div>
+      <div id="miniarrow"></div>
       <div id="spinner">
         
       </div>
