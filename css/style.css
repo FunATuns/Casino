@@ -111,6 +111,11 @@ button:hover, a:hover {
   margin: 0 auto;
 }
 
+.roll {
+  transition: transform 9.5s cubic-bezier(.31,.9985,.31,.9985);
+}
+
+
 #nousername {
   position: relative;
   display: none;
