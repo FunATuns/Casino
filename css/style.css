@@ -172,6 +172,10 @@ button:hover, a:hover {
   padding-bottom: 1.05em !important;
 }
 
+#history tr {
+  padding: 0 5px;
+}
+
 #history tr td {
   display: block;
   text-align: center;
@@ -192,8 +196,11 @@ button:hover, a:hover {
 }
 
 #packages {
-  height: 16em;
+  height: 14em;
   width: 100%;
+  margin-top: 1.5em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .spinItem {
@@ -223,6 +230,8 @@ button:hover, a:hover {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  height: 20em;
+  padding-top: 4em;
 }
 
 #historyP {
@@ -246,6 +255,7 @@ button:hover, a:hover {
   padding: 60px;
   background-color: #00457D;
   color: white;
+
 }
 
 #extras div div {
@@ -260,4 +270,40 @@ button:hover, a:hover {
   padding: 25px 50px;
   font-size: 64px;
   letter-spacing: 1px;
+}
+
+#spinnerOptions {
+  text-align: center;
+  margin-top: 3em;
+  font-size: 23px;
+}
+
+.Fpackage, .package {
+  background-color: #63C900;
+  text-align: center;
+  width: 45%;
+  color: white;
+  padding: 20px 0;
+  display: inline-block;
+  height: 10em;
+}
+
+.package h2, .Fpackage h2{
+  font-size: 28px;
+}
+
+.package ul li, .Fpackage ul li {
+  padding: 5px 0;
+}
+
+.selected {
+  border: 5px solid rgba(0, 0, 0, .5)
+}
+
+.package {
+  margin-left: 3em;
+}
+
+.cost {
+  font-size: 24px;
 }

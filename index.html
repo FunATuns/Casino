@@ -11,6 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/ads.js"></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -18,6 +19,11 @@
 </head>
 
 <body id="body">
+  <script>
+    if( window.canRunAds === undefined ){
+        alert("lmao");
+    }
+  </script>
   <div id="chooseNameOverlay">
   	<div id="form">
       <input type="text" id="username" autocomplete="off" placeholder="Enter a username" maxlength="18"/>
@@ -42,12 +48,49 @@
     
     <section id="gameSection">
       <div id="packages">
-        <button onclick="testevent()">lmao</button>
+        <div id="packageOne" class="Fpackage selected" onclick="changeSel(1);">
+          <h2>Classic Package</h2>
+          <ul>
+            <li class='cost'>Cost: $200</li>
+            <li>The classic package. Pretty plain, </li>
+            <li>pretty boring. But also pretty </li>
+            <li>cheap. Ideal for beginners.</li>
+            <li><pre> </pre></li>
+          </ul>
+        </div>
+        <div id="midClass" class="package" onclick="changeSel(2);">
+          <h2>Middle Class Package</h2>
+          <ul>
+            <li class='cost'>Cost: $500</li>
+            <li>A step up from the classic,</li>
+            <li>but not much of one.</li>
+            <li>Ideal for mediocre players</li>
+            <li>who think they have a chance.</li>
+          </ul>
+        </div>
+        <div id="gambPack" class="package" onclick="changeSel(3);">
+          <h2>Gamblers Package</h2>
+          <ul>
+            <li class='cost'>Cost: $1500</li>
+            <li>The infamous gamblers package, high</li>
+            <li>price, high stakes, and a chance of</li>
+            <li>high winnings. This package is only for</li>
+            <li>those willing to put everything on the line.</li>
+          </ul>
+        </div>
+        <div id="gambPack2" class="package" onclick="changeSel(4);">
+          <h2>Gamblers Package pt. 2</h2>
+          <ul>
+            <li class='cost'>Cost: $100,000</li>
+            <li>As if the first one wasn't enough,</li>
+            <li>the gamblers pack comes back again</li>
+            <li> for another round. It costs a cool</li>
+            <li>100,000, but can land you 1,000,000</li>
+          </ul>
+        </div>
       </div>
       <div id="miniArrow"></div>
       <div id="spinner">
-          
-        
       </div>
       <div id="extras">
         <div id="selPackage">
@@ -58,7 +101,7 @@
             <button onclick="spin()" id="spinnerBtn">Spin!</button>
           </div>
           <div id="spinnerOptions">
-            Lmao
+            
           </div>
         </div>
         <div id="leaderboard">
