@@ -17,17 +17,15 @@ var packageOne = {
 };
 
 var middleClass = {
-  "100": 40,
-  "200":30,
-  "500":20,
-  "1000":10,
+  "200":20,
+  "500":40,
+  "1000":30,
+  "2000":10,
   "cost": 500
 };
 
 var gambPackage = {
-  "100": 90,
-  "200":0,
-  "500":0,
+  "500": 90,
   "10000": 10,
   "cost": 1500
 };
@@ -115,6 +113,9 @@ function getColorFromValue(value)
       break;
     case 1000:
       return "1cffa0";
+      break;
+    case 2000:
+      return "1cffec";
       break;
     case 10000:
       return "1cb3ff";
