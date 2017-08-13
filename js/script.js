@@ -2,7 +2,7 @@ var gameElement = document.getElementById("body"),
     nameOverlay = document.getElementById("chooseNameOverlay"),
     moneyP = document.getElementById("money"),
     spinner = document.getElementById("spinner"),
-    money = 200000,
+    money = 500,
     name,
     whichBackground = true,
     spinAgain = true,
@@ -146,18 +146,23 @@ function createEvent(message, affMoney, posOrNeg) {
 
 function spin () {
   if (spinAgain) {
-    spinAgain = false;
-    var data = generateItemlist(selPackage);
-    money = money - selPackage.cost;
-    document.getElementById("money").innerHTML = money;
-    createEvent(name + " spun the wheel", selPackage.cost, "-");
-    spinner.innerHTML = data.htmlString;
-    setTimeout(function() {
-      $(".spinItem").css("transform", "translateX(-905em)");
-    },500);
-    setTimeout(function() {
-    doneSpin(data.winnings);
-    },10000);
+    if(selPackage.cost == 200 || money >= selPackage.cost)
+    {
+      spinAgain = false;
+      var data = generateItemlist(selPackage);
+      money = money - selPackage.cost;
+      document.getElementById("money").innerHTML = money;
+      createEvent(name + " spun the wheel", selPackage.cost, "-");
+      spinner.innerHTML = data.htmlString;
+      setTimeout(function() {
+        $(".spinItem").css("transform", "translateX(-905em)");
+      },500);
+      setTimeout(function() {
+      doneSpin(data.winnings);
+      },10000);
+    }
+    else
+    alert("Sorry! you ran out of money. Please try a different package!");
   }
 }
 
@@ -165,7 +170,7 @@ function doneSpin(amountWon) {
   money = money + amountWon;
   document.getElementById("money").innerHTML = money;
   if (money < 0) {
-    alert("Sorry! you ran out of money. Please try again!");
+   
     location.reload();
   }
   createEvent(name + " won $" + amountWon + "!", amountWon, "+");
@@ -181,35 +186,19 @@ function changeSel(elID) {
   }
   else if (elID == 2) {
     selPackage = middleClass;
-    if (selPackage.cost > money) {
-      alert("You do not have enough money for this package!");
-      selPackage = packageOne;
-    }
-    else {
-      $(".selected").removeClass("selected");
-      $("#midClass").addClass("selected");
-    }
+    $(".selected").removeClass("selected");
+    $("#midClass").addClass("selected");
+    
   }
   else if (elID == 3) {
     selPackage = gambPackage;
-    if (selPackage.cost > money) {
-      alert("You do not have enough money for this package!");
-      selPackage = packageOne;
-    }
-    else {
-      $(".selected").removeClass("selected");
-      $("#gambPack").addClass("selected");
-    }
+    $(".selected").removeClass("selected");
+    $("#gambPack").addClass("selected");
+    
   }
   else if (elID == 4) {
     selPackage = gambPackage2;
-    if (selPackage.cost > money) {
-      alert("You do not have enough money for this package!");
-      selPackage = packageOne;
-    }
-    else {
-      $(".selected").removeClass("selected");
-      $("#gambPack2").addClass("selected");
-    }
+    $(".selected").removeClass("selected");
+    $("#gambPack2").addClass("selected");
   }
 }
