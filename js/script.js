@@ -17,9 +17,9 @@ var packageOne = {
 };
 
 var middleClass = {
-  "200":20,
-  "500":40,
-  "1000":30,
+  "200":30,
+  "500":35,
+  "1000":25,
   "2000":10,
   "cost": 500
 };
@@ -163,7 +163,7 @@ function spin () {
       },10000);
     }
     else
-    alert("Sorry! you ran out of money. Please try a different package!");
+    alert("Sorry! You do not have enough money for this package. Please try a different package.");
   }
 }
 
@@ -184,22 +184,56 @@ function changeSel(elID) {
     selPackage = packageOne;
     $(".selected").removeClass("selected");
     $("#packageOne").addClass("selected");
+    document.getElementById("packName").innerHTML = "Classic Pack";
+    document.getElementById("packChanceOne").innerHTML = "50% chance of $100";
+    document.getElementById("packChanceTwo").innerHTML = "26% chance of $200";
+    document.getElementById("packChanceThree").innerHTML = "20% chance of $500";
+    document.getElementById("packChanceFour").innerHTML = "4% chance of $1000";
+    
   }
   else if (elID == 2) {
     selPackage = middleClass;
     $(".selected").removeClass("selected");
     $("#midClass").addClass("selected");
-    
+    document.getElementById("packName").innerHTML = "Middle Class Package";
+    document.getElementById("packChanceOne").innerHTML = "30% chance of $200";
+    document.getElementById("packChanceTwo").innerHTML = "35% chance of $500";
+    document.getElementById("packChanceThree").innerHTML = "25% chance of $1000";
+    document.getElementById("packChanceFour").innerHTML = "10% chance of $2000";
   }
   else if (elID == 3) {
     selPackage = gambPackage;
     $(".selected").removeClass("selected");
     $("#gambPack").addClass("selected");
-    
+    document.getElementById("packName").innerHTML = "Gambler's Package";
+    document.getElementById("packChanceOne").innerHTML = "90% chance of $500";
+    document.getElementById("packChanceTwo").innerHTML = "10% chance of $10,000";
+    document.getElementById("packChanceThree").innerHTML = " ";
+    document.getElementById("packChanceFour").innerHTML = " ";
   }
   else if (elID == 4) {
     selPackage = gambPackage2;
     $(".selected").removeClass("selected");
     $("#gambPack2").addClass("selected");
+    document.getElementById("packName").innerHTML = "Gambler's Package pt. 2";
+    document.getElementById("packChanceOne").innerHTML = "90% chance of $10,000";
+    document.getElementById("packChanceTwo").innerHTML = "10% chance of $1,000,000";
+    document.getElementById("packChanceThree").innerHTML = " ";
+    document.getElementById("packChanceFour").innerHTML = " ";
   }
 }
+
+$(document).keypress(function(event){
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if(keycode == '13'){
+    document.getElementById("spinnerBtn").style.backgroundColor = "white";
+    document.getElementById("spinnerBtn").style.color = "#63C900";
+    $("#spinnerBtn").addClass('activeBtn');
+    setTimeout(function() {
+      document.getElementById("spinnerBtn").style.backgroundColor = "";
+      document.getElementById("spinnerBtn").style.color = "";
+      $("#spinnerBtn").removeClass('activeBtn');
+      document.getElementById('spinnerBtn').click();
+    }, 100);
+	}
+});
