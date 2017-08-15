@@ -57,7 +57,18 @@ function start() {
     ready = true;
     generateLeaderboard();
   }
+  if (screen.width != $(window).width()) {
+    alert("Please maximize your browser!");
+  }
 }
+
+$(window).resize(function() {
+  setTimeout(function() {
+    if (screen.width != $(window).width()) {
+    alert("Please maximize your browser!");
+    }
+  }, 3500);
+});
 
 function generateItem (package) {
   var possibleArray = [];
