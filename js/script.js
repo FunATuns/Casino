@@ -67,7 +67,7 @@ $(window).resize(function() {
     if (screen.width != $(window).width()) {
     alert("Please maximize your browser!");
     }
-  }, 3500);
+  }, 5000);
 });
 
 function generateItem (package) {
