@@ -237,5 +237,8 @@ $(document).keypress(function(event){
         document.getElementById('spinnerBtn').click();
       }, 100);
     }
+    else {
+      start();
+    }
   }
 });
