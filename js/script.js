@@ -6,7 +6,8 @@ var gameElement = document.getElementById("body"),
     name,
     whichBackground = true,
     spinAgain = true,
-    elID;
+    elID,
+    ready = false;
 
 var packageOne = {
   "100": 50,
@@ -31,8 +32,6 @@ var gambPackage = {
 };
 
 var gambPackage2 = {
-  "100":0,
-  "500":0,
   "10000": 90,
   "1000000": 10,
   "cost": 100000
@@ -54,6 +53,7 @@ function start() {
     document.getElementById("prHR").style.display = "block";
     moneyP.innerHTML = money;
     createEvent(name + " has joined", 500, "+");
+    ready = true;
   }
 }
 
@@ -156,7 +156,7 @@ function spin () {
       createEvent(name + " spun the wheel", selPackage.cost, "-");
       spinner.innerHTML = data.htmlString;
       setTimeout(function() {
-        $(".spinItem").css("transform", "translateX(-905em)");
+        $(".spinItem").css("transform", "translateX(-855em)");
       },500);
       setTimeout(function() {
       doneSpin(data.winnings);
@@ -226,14 +226,16 @@ function changeSel(elID) {
 $(document).keypress(function(event){
 	var keycode = (event.keyCode ? event.keyCode : event.which);
 	if(keycode == '13'){
-    document.getElementById("spinnerBtn").style.backgroundColor = "white";
-    document.getElementById("spinnerBtn").style.color = "#63C900";
-    $("#spinnerBtn").addClass('activeBtn');
-    setTimeout(function() {
-      document.getElementById("spinnerBtn").style.backgroundColor = "";
-      document.getElementById("spinnerBtn").style.color = "";
-      $("#spinnerBtn").removeClass('activeBtn');
-      document.getElementById('spinnerBtn').click();
-    }, 100);
-	}
+    if(ready){
+      document.getElementById("spinnerBtn").style.backgroundColor = "white";
+      document.getElementById("spinnerBtn").style.color = "#63C900";
+      $("#spinnerBtn").addClass('activeBtn');
+      setTimeout(function() {
+        document.getElementById("spinnerBtn").style.backgroundColor = "";
+        document.getElementById("spinnerBtn").style.color = "";
+        $("#spinnerBtn").removeClass('activeBtn');
+        document.getElementById('spinnerBtn').click();
+      }, 100);
+    }
+  }
 });
