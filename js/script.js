@@ -204,7 +204,7 @@ function doneSpin(amountWon) {
   money = money + amountWon;
   document.getElementById("money").innerHTML = money;
   if (money < 0) {
-   
+    alert("You ran out of money! Restarting...");
     location.reload();
   }
   createEvent(name + " won $" + amountWon + "!", amountWon, "+");
