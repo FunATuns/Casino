@@ -391,14 +391,17 @@ button:hover, a:hover {
   #history tr td, #spinnerOptions {
     font-size: 16px;
   }
-  #packName, #leaderboard h2 {
+  #leaderboard h2 {
     font-size: 20px;
+  }
+  #packName {
+    font-size: 16px;
   }
   #leaderboard ul li {
     font-size: 9.5px;
   }
-  #selpackage ul li {
-    font-size: 16px;
+  #selPackage ul li {
+    font-size: 14px;
   }
   #spinnerBtn {
     font-size: 40px;
