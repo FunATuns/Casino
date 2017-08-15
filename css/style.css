@@ -31,7 +31,7 @@ body {
   line-height: 1;
   overflow: hidden;
 }
-ol, ul {
+ul {
 	list-style: none;
 }
 blockquote, q {
@@ -354,4 +354,28 @@ button:hover, a:hover {
   display: block !important;
   width: 100% !important;
   text-align: center !important;
+}
+
+#leaderboard {
+  height: 198px;
+}
+
+#leaderboard h2 {
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+
+#leaderboard ul {
+  width: 100%;
+  margin-top: .5em;
+  overflow-y: auto;
+  height: 11em;
+}
+
+#leaderboard ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 0;
 }
