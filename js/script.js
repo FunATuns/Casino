@@ -152,6 +152,7 @@ function spin () {
     if(selPackage.cost == 200 || money >= selPackage.cost)
     {
       spinAgain = false;
+      generateLeaderboard()
       var data = generateItemlist(selPackage);
       money = money - selPackage.cost;
       document.getElementById("money").innerHTML = money;
