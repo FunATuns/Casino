@@ -8,6 +8,24 @@ var gameElement = document.getElementById("body"),
     spinAgain = true,
     elID;
 
+var leadboardPeople = [
+  {name: "Homeless man", money: 750}, //1
+  {name: "College kid", money: 1500}, //2
+  {name: "Mcdonalds manager", money: 3000}, //3
+  {name: "Senior PGA player", money: 5000}, //4
+  {name: "Greece", money: 7500}, //5
+  {name: "Joe", money: 10000}, //6
+  {name: "ESports player", money: 15000}, //7
+  {name: "Sega CEO", money: 20000}, //8
+  {name: "Music star", money: 50000}, //9
+  {name: "Football star", money: 100000}, //10
+  {name: "PGA player", money: 250000}, //11
+  {name: "Mark Zuckerburg", money: 1000000}, //12
+  {name: "Bill Gates", money: 100000000}, //13
+  {name: "America", money: 3000000000} //14
+
+];
+
 var packageOne = {
   "100": 50,
   "200":26,
@@ -160,11 +178,27 @@ function spin () {
       },500);
       setTimeout(function() {
       doneSpin(data.winnings);
+      generateLeaderboard();
       },10000);
     }
     else
     alert("Sorry! you ran out of money. Please try a different package!");
   }
+}
+
+function generateLeaderboard() {
+  var copyBoard = leadboardPeople;
+  copyBoard.push({name: name, money: money})
+  copyBoard.sort(function(a, b) {
+    return b.money - a.money;
+  });
+
+  var listHtml = "";
+
+  for(var i = 0; i < copyBoard.length;i++) {
+    listHtml += "<li>" + (i+1) + ". " + copyBoard[i].name + "  $" + copyBoard[i].money + "</li>";
+  }
+  document.getElementById("leaderboardSec").innerHTML = listHtml;
 }
 
 function doneSpin(amountWon) {
