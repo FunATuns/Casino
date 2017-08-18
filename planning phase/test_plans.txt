@@ -1,0 +1,59 @@
+Test One // Username
+    Inputs: Payton
+    Expected Output: Payton
+    Actual Output: Payton
+
+Test Two // Username
+    Inputs: Brennan
+    Expected Output: Brennan
+    Actual Output: Brennan
+
+Test Three // Username
+    Inputs: Carlos
+    Expected Output: Carlos
+    Actual Output: Carlos
+
+Test Four // Username
+    Inputs: Susan
+    Expected Output: Susan 
+    Actual Output: Susan
+    
+Test Five // Package costs
+    Inputs: Classic package
+    Expected Output: 200 cost
+    Actual Output: 200 cost
+
+Test Six // Package costs
+    Inputs: Middle class package
+    Expected Output: 500 cost
+    Actual Output: 500 cost
+
+Test Seven // Package costs
+    Inputs: Gamblers package
+    Expected Output: 1500 cost
+    Actual Output: 1500 cost
+
+Test Eight // Package costs
+    Inputs: Gamblers package pt 2
+    Expected Output: 100,000 cost
+    Actual Output: 100,000 cost
+
+Test Nine // Spin results
+    Inputs: Classic package
+    Expected Output: 100 OR 200 OR 500 OR 1000 (Random)
+    Actual Output: 200
+
+Test Ten  // Spin results
+    Inputs: Middle class package
+    Expected Output: 200 OR 500 OR 1000 OR 2000 (Random)
+    Actual Output: 2000
+
+Test Eleven  // Spin results
+    Inputs: Gamblers Package
+    Expected Output: 500 OR 10,000 (Random)
+    Actual Output: 500
+
+Test Twelve  // Spin results
+    Inputs: Gamblers Package pt 2
+    Expected Output: 10,000 OR 1,000,000 (Random)
+    Actual Output: 10,000
