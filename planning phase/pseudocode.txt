@@ -1,0 +1,40 @@
+CASINO
+	declare name
+	declare money
+	declare packages
+	declare spinItems
+	declare selectedPackage
+	prompt for name
+	IF name is not nothing THEN
+		load game screen
+		display playerInfo elemen
+		display spinner element
+		display leaderboard element
+		display history element
+		display package elements
+		set money = 500
+		set selectedPackage = classic package
+		
+		IF one of packages is clicked THEN
+			set selectedPackage to the clicked package
+			update package info
+		ENDIF
+
+		IF spinner is clicked THEN
+			set money - selectedPackage cost
+			add event to history
+
+			FOR all the possible spin items in selectedPackage 
+				push to spinItems
+			ENDFOR
+
+			spin spinner
+
+			IF spinner is done spinning THEN
+				set money + winnings
+				add event to history	
+				update leaderboard
+			ENDIF
+		ENDIF
+	ENDIF
+END

@@ -1,0 +1,40 @@
+INPUTS
+	name
+	selectedPackage
+	spin
+
+PROCESSING
+	prompt for name
+	load game screen
+		display name in upper left
+		display packages in upper right
+		display spinner
+		display leaderboard in bottom right
+		display history in bottom left
+		select classic package
+
+	if the user spins
+		get selectedPackage
+		update the spinner	
+		spin the spinner
+		subtract the spin cost
+		if the spinner is done
+			add the winning money
+			add an event to history
+			update leaderboard
+
+	if the user selects a new package
+		set selectedPackage
+		display selectedPackages info in the bottom left
+		update spinner data
+	
+OUTPUTS
+	name
+	selectedPackage
+	selectedPackage data
+	leaderboard
+	spinner
+	packages
+	history
+	money
+	player info
