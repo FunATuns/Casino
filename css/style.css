@@ -81,10 +81,11 @@ table {
 #form {
   margin: 38vh auto;
   display: block;
+  margin-top: 25px;
 }
 
 #form button {
-  background-color: #00457D;
+  background-color: #2671ad;
   border: none;
   font-size: 24px;
   padding: 10px 30px;
@@ -109,6 +110,15 @@ button:hover, a:hover {
   padding: 6px 12px;
   display: block;
   margin: 0 auto;
+}
+
+#chooseNameOverlay h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 300px;
 }
 
 .roll {
@@ -138,7 +148,7 @@ button:hover, a:hover {
   left:0;
   right:0;
   overflow:hidden;
-  background-color: #00457D;
+  background-color: #2671ad;
   color: white;
   font-size: 32px;
 }
@@ -147,12 +157,12 @@ button:hover, a:hover {
   width: 100%;
   text-align: center;
   padding: 5px 0;
-  background-color: #00457D;
+  background-color: #2671ad;
   z-index: 10;
   position: relative;
 }
 
-#welcoming, #currentbalance {
+#currentbalance {
   padding-top: 50px !important;
 }
 
@@ -239,7 +249,7 @@ button:hover, a:hover {
 
 #historyP {
   padding: calc(.45em + 10px) 0 !important;
-  background-color: #00457D;
+  background-color: #2671ad;
   z-index: 10;
 }
 
@@ -259,7 +269,7 @@ button:hover, a:hover {
   content: "";
   width: 24.925%;
   display: inline-block;
-  background-color: #00457D;
+  background-color: #2671ad;
   color: white;
   vertical-align: top;
 }
@@ -273,7 +283,7 @@ button:hover, a:hover {
 }
 
 #spinnerBtn {
-  background-color: #63C900;
+  background-color: #5ed163;
   border: none;
   outline: none;
   color: white;
@@ -285,7 +295,7 @@ button:hover, a:hover {
 }
 
 #spinnerBtn:hover {
-  color: #63C900;
+  color: #5ed163;
   background-color: white;
 }
 
@@ -308,7 +318,7 @@ button:hover, a:hover {
 }
 
 .Fpackage, .package {
-  background-color: #63C900;
+  background-color: #5ed163;
   text-align: center;
   width: 45%;
   color: white;
@@ -379,6 +389,16 @@ button:hover, a:hover {
   text-align: center;
   font-size: 18px;
   padding: 5px 0;
+}
+
+#help {
+  margin: 4px 0;
+  text-align: right !important;
+  width: 95% !important;
+}
+
+#helpI {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1300px)  {

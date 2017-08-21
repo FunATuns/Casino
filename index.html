@@ -10,6 +10,7 @@
   
 
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/ads.js"></script>
 
@@ -20,12 +21,11 @@
 
 <body id="body">
   <script>
-    if( window.canRunAds === undefined ){
-        alert("lmao");
-    }
+    
   </script>
   <div id="chooseNameOverlay">
   	<div id="form">
+      <h2>Slot Machine</h2>
       <input type="text" id="username" autocomplete="off" placeholder="Enter a username" maxlength="18"/>
       <p id="nousername">Please enter a username!</p>
       <button id="startGameBtn" onClick="start();">Begin!</button>
@@ -34,6 +34,7 @@
   <main> 
     <section id="playersInfo">
     	<div id="profile">
+        <p id="help"><i id="helpI" class="fa fa-question-circle" onclick="displayHelp();"></i></p>
         <p id="welcoming">Welcome,</p><p id="usernamePlace"></p>
         <p id="currentbalance">Current Balance:</p><p id="money"></p>
       </div>
@@ -94,12 +95,12 @@
       </div>
       <div id="extras">
         <div id="selPackage">
-            <ul>
+            <ul id="selPackageUl">
               <li><pre id="packName">Classic Package</pre></li>
-              <li><pre id="packChanceOne">50% chance of $100</pre></li>
-              <li><pre id="packChanceTwo">26% chance of $200</pre></li>
-              <li><pre id="packChanceThree">20% chance of $500</pre></li>
-              <li><pre id="packChanceFour">4% chance of $1000</pre></li>
+              <li><pre id="packChanceOne">40% chance of $100</pre></li>
+              <li><pre id="packChanceTwo">30% chance of $200</pre></li>
+              <li><pre id="packChanceThree">25% chance of $500</pre></li>
+              <li><pre id="packChanceFour">5% chance of $1000</pre></li>
             </ul>
         </div>
         <div id="spinOptions">

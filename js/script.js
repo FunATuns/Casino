@@ -8,13 +8,23 @@ var gameElement = document.getElementById("body"),
     spinAgain = true,
     elID,
     ready = false,
-    leadboardPeople;
+    leadboardPeople,
+    selPackageName,
+    spins;
+
+if(localStorage.getItem("spins") != null) {
+  spins = localStorage.getItem("spins");
+}
+else {
+  localStorage.setItem('spins', 0);
+  spins = localStorage.getItem("spins");
+}
 
 var packageOne = {
-  "100": 50,
-  "200":26,
-  "500":20,
-  "1000": 4,
+  "100": 40,
+  "200":30,
+  "500":25,
+  "1000": 5,
   "cost": 200
 };
 
@@ -163,6 +173,8 @@ function spin () {
     if(selPackage.cost == 200 || money >= selPackage.cost)
     {
       spinAgain = false;
+      spins++;
+      localStorage.setItem('spins', spins);
       generateLeaderboard()
       var data = generateItemlist(selPackage);
       money = money - selPackage.cost;
@@ -215,44 +227,35 @@ function doneSpin(amountWon) {
 function changeSel(elID) {
   if (elID == 1) {
     selPackage = packageOne;
+    selPackageName = "Classic Package";
     $(".selected").removeClass("selected");
     $("#packageOne").addClass("selected");
-    document.getElementById("packName").innerHTML = "Classic Pack";
-    document.getElementById("packChanceOne").innerHTML = "50% chance of $100";
-    document.getElementById("packChanceTwo").innerHTML = "26% chance of $200";
-    document.getElementById("packChanceThree").innerHTML = "20% chance of $500";
-    document.getElementById("packChanceFour").innerHTML = "4% chance of $1000";
-    
   }
   else if (elID == 2) {
     selPackage = middleClass;
+    selPackageName = "Middle Class Package";
     $(".selected").removeClass("selected");
     $("#midClass").addClass("selected");
-    document.getElementById("packName").innerHTML = "Middle Class Package";
-    document.getElementById("packChanceOne").innerHTML = "30% chance of $200";
-    document.getElementById("packChanceTwo").innerHTML = "35% chance of $500";
-    document.getElementById("packChanceThree").innerHTML = "25% chance of $1000";
-    document.getElementById("packChanceFour").innerHTML = "10% chance of $2000";
   }
   else if (elID == 3) {
     selPackage = gambPackage;
+    selPackageName = "Gambler's Package";
     $(".selected").removeClass("selected");
     $("#gambPack").addClass("selected");
-    document.getElementById("packName").innerHTML = "Gambler's Package";
-    document.getElementById("packChanceOne").innerHTML = "90% chance of $500";
-    document.getElementById("packChanceTwo").innerHTML = "10% chance of $10,000";
-    document.getElementById("packChanceThree").innerHTML = " ";
-    document.getElementById("packChanceFour").innerHTML = " ";
   }
   else if (elID == 4) {
     selPackage = gambPackage2;
+    selPackageName = "Gambler's Package pt. 2";
     $(".selected").removeClass("selected");
     $("#gambPack2").addClass("selected");
-    document.getElementById("packName").innerHTML = "Gambler's Package pt. 2";
-    document.getElementById("packChanceOne").innerHTML = "90% chance of $10,000";
-    document.getElementById("packChanceTwo").innerHTML = "10% chance of $1,000,000";
-    document.getElementById("packChanceThree").innerHTML = " ";
-    document.getElementById("packChanceFour").innerHTML = " ";
+  }
+  var keyNames = Object.keys(selPackage);
+  var keyProps = Object.values(selPackage);
+  document.getElementById("selPackageUl").innerHTML = "<li id='packName'>" + selPackageName + "</li>";
+  for (var i in keyNames) {
+    if (keyNames[i] != "cost") {
+      document.getElementById("selPackageUl").innerHTML += "<li>" + keyProps[i] + "% chance of $" + keyNames[i] + "</li>";
+    }
   }
 }
 
